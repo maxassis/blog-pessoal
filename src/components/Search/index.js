@@ -1,5 +1,5 @@
 import React from "react"
-
+import algoliasearch from "algoliasearch/lite"
 import { InstantSearch, SearchBox, Hits, Stats } from "react-instantsearch-dom"
 
 import Hit from "./Hit"
@@ -11,10 +11,15 @@ const algolia = {
   indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
 }
 
+const searchClient = algoliasearch(
+  "UUS4R0L043",
+  "0d97887c898c3f72399823044683cce6"
+)
 
 const Search = () => (
-    <S.SearchWrapper>
-     <InstantSearch
+  <S.SearchWrapper>
+    <InstantSearch
+      searchClient={searchClient}
       appId={algolia.appId}
       apiKey={algolia.searchOnlyApiKey}
       indexName={algolia.indexName}
