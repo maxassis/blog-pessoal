@@ -13,7 +13,7 @@ export const SocialLinksWrapper = styled.nav`
 export const SocialLinksList = styled.ul`
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   list-style: none;
 `
 
